@@ -36,18 +36,16 @@ Function Add-NewADUserToOU
     $ExcelWorkSheet = $ExcelWorkBook.Sheets.Item(1)
     
     # Find # of rows and columns used
-    $RowCount = 1
+    $RowCount = 0
     while($null -ne $ExcelWorkSheet.Columns.Item(1).Rows.Item($RowCount).Value())
     {
         $RowCount++
     }
-    $RowCount = $RowCount - 1
-    $ColCount = 1
+    $ColCount = 0
     while($null -ne $ExcelWorkSheet.Columns.Item($ColCount).Rows.Item(1).Value())
     {
         $ColCount++
     }
-    $ColCount = $ColCount - 1
 
     # Define columns
     if($ColCount -eq 6)
@@ -175,18 +173,16 @@ Function Add-UsersToFinalExcelFile
     $ExcelWorkSheet1 = $ExcelWorkBook1.Sheets.Item(1)
 
     # Find # of rows and columns used
-    $RowCount1 = 1
+    $RowCount1 = 0
     while($null -ne $ExcelWorkSheet1.Columns.Item(1).Rows.Item($RowCount1).Value())
     {
         $RowCount1++
     }
-    $RowCount1 = $RowCount1 - 1
-    $ColCount1 = 1
+    $ColCount1 = 0
     while($null -ne $ExcelWorkSheet1.Columns.Item($ColCount1).Rows.Item(1).Value())
     {
         $ColCount1++
     }
-    $ColCount1 = $ColCount1 - 1
 
     $ExcelObj2 = New-Object -comobject Excel.Application
     $ExcelObj2.visible=$true
@@ -196,7 +192,7 @@ Function Add-UsersToFinalExcelFile
     $ExcelObj1.Calculation = -4135
     $ExcelObj2.Calculation = -4135
 
-    # For setti input
+    # Defining Column numbers
     if($ColCount1 -eq 8)
     {
         $NameCol = [int]$ExcelWorkSheet1.Range("A1:F1").find("Name").Column
