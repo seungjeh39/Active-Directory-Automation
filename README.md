@@ -7,4 +7,4 @@ Active Directory Automation program using PowerShell
 4. Write-ExecutionSummary: Write execution summary in ADAutomationExecutionLog.txt
 
 # License
-This project is licensed under the MIT License - see the LICENSE.md file for details
+This project is licensed under the MIT License - see the LICENSE file for details
