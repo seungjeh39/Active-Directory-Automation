@@ -24,7 +24,7 @@ Function Show-fileOpenStatus
 
 
 
-# Create new users and add them to Organizational Units (OU)
+# Create new AD Users and add them to Organizational Units (OU)
 Function Add-NewADUserToOU
 {
 
