@@ -108,8 +108,7 @@ Function Add-NewADUserToOU
             
 
         $UserInstance = Get-ADUser -Filter {displayName -like $DefaultAccount} -Properties CannotChangePassword,Department,HomeDirectory,
-        HomeDrive,PasswordExpired,PasswordNeverExpires,PasswordNotRequired
-        #,ScriptPath,SmartcardLogonRequired
+        HomeDrive,PasswordExpired,PasswordNeverExpires,PasswordNotRequired,SmartcardLogonRequired
 
 
         # Choose an Organizationl Unit (OU) from the list (these OU's should be replaced with actual OU's)
@@ -273,6 +272,7 @@ Function Write-ExecutionSummary
 }
 
 
+#########################################################################################################################
 
 # My directory
 $Path = 'C:\Users\Documents\ActiveDirectoryManagement'
